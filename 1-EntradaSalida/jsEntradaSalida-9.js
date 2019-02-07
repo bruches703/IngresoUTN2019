@@ -11,6 +11,6 @@ function MostrarAumento()
     sueldo = parseInt(document.getElementById("sueldo").value);
     res = sueldo*10/100;
     aumento = sueldo + res;
-    document.getElementById("resultado").value = aumento;
+    document.getElementById("resultado").value = aumento.toFixed(2);
 	alert("El aumento seria de $"+ res);
 }
