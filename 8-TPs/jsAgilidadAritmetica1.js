@@ -9,7 +9,9 @@ se debe informar si el resultado es el correcto o no.
 var respuesta;
 function comenzar()
 {
-
+   document.getElementById("PrimerNumero").value = Math.floor(Math.random()*10)+1;
+   document.getElementById("PrimerNumero").value = Math.floor(Math.random()*10)+1;
+   Math.
 	
 
 }//FIN DE LA FUNCIÓN

@@ -119,34 +119,34 @@ function CalcularPrecio ()
             suma= 35*cant;
             descuento = suma * 0.15;
             total= suma-descuento;
-            if(total >= 120)
-            {
-                iibb= total*0.10;
-                total= total+iibb;
+                if(total >= 120)
+                {
+                    iibb= total*0.10;
+                    total= total+iibb;
+                    document.getElementById("precioDescuento").value = total.toFixed(2);
+                    alert ("Se sumo impusto IIBB de "+ iibb);
+                }
+                else
+                {
                 document.getElementById("precioDescuento").value = total.toFixed(2);
-                alert ("Se sumo impusto IIBB de "+ iibb);
-            }
-            else
-            {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-            }
+                }
         }
-        if (opcion== "FelipeLamparas")
+        if (opcion == "FelipeLamparas")
         {
             suma= 35*cant;
             descuento = suma * 0.10;
             total= suma-descuento;
-            if(total >= 120)
-            {
-                iibb= total*0.10;
-                total= total+iibb;
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-                alert ("Se sumo impusto IIBB de "+ iibb);
-            }
-            else
-            {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-            }
+                if(total >= 120)
+                {
+                    iibb= total*0.10;
+                    total= total+iibb;
+                    document.getElementById("precioDescuento").value = total.toFixed(2);
+                    alert ("Se sumo impusto IIBB de "+ iibb);
+                }
+                else
+                {
+                    document.getElementById("precioDescuento").value = total.toFixed(2);
+                }
         }
         else
         {
@@ -164,7 +164,6 @@ function CalcularPrecio ()
             {
                 document.getElementById("precioDescuento").value = total.toFixed(2);
             }
-
-        }    
+        }
      }
 }
