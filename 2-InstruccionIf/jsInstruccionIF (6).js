@@ -8,11 +8,11 @@ if (edad<13)
 {
     alert("es un niño");
 }
-if (edad>=13 && edad<=17)
+else if(edad>=13 && edad<=17)
 {
     alert("Es un adolescente");
 }
-if (edad>17)
+else
 {
     alert("es adulto");
 }
