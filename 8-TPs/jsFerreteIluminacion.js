@@ -10,160 +10,71 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var cant, opcion, descuento, total, suma, iibb;
+ 	var cant, opcion, descuento, total, suma, iibb, precio=35, flag=false;
 
-     cant = parseFloat(document.getElementById("Cantidad").value);
+     cant = parseInt(document.getElementById("Cantidad").value);
      opcion = document.getElementById("Marca").value;
 /*Compra mayor a 6 lamparas*/
      if (cant >= 6)
      {
-        suma= 35*cant;
-        descuento = suma * 0.50;
-        total= suma-descuento;
-        if(total >= 120)
-        {
-            iibb= total*0.10;
-            total= total+iibb;
-            document.getElementById("precioDescuento").value = total.toFixed(2);
-            alert ("Se sumo impusto IIBB de "+ iibb);
-        }
-        else
-        {
-            document.getElementById("precioDescuento").value = total.toFixed(2);
-        }
+        descuento = precio * 50/100;
      }
 /* compra 5 lamparas ArgentinaLuz*/
-     if(cant == 5)
+     else if(cant == 5)
      {
         if(opcion == "ArgentinaLuz")
         {
-            suma= 35*cant;
-            descuento = suma * 0.40;
-            total= suma-descuento;
-           if(total >= 120)
-            {
-                iibb= total*0.10;
-                total= total+iibb;
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-                alert ("Se sumo impusto IIBB de "+ iibb);
-            }
-            else
-            {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-            }
+            descuento = precio * 40/100;
         }
      
-        if(opcion != "ArgentinaLuz")
-            {    
-            suma= 35*cant;
-            descuento = suma * 0.30;
-            total= suma-descuento;
-                if(total >= 120)
-                {
-                    iibb= total*0.10;
-                    total= total+iibb;
-                    document.getElementById("precioDescuento").value = total.toFixed(2);
-                    alert ("Se sumo impusto IIBB de "+ iibb);
-                }
-                else
-                {
-                    document.getElementById("precioDescuento").value = total.toFixed(2);
-                }
-            
-            } 
+        else 
+        {    
+            descuento = precio * 30/100;
+        } 
      }
 /*compra 4 lamparas ArgentinaLuz o FelipeLamparas*/
-     if (cant == 4)
+     else if (cant == 4)
      {
          if (opcion=="ArgentinaLuz" || opcion == "FelipeLamparas")
         {
-            suma= 35*cant;
-            descuento = suma * 0.25;
-            total= suma-descuento;
-            if(total >= 120)
-            {
-                iibb= total*0.10;
-                total= total+iibb;
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-                alert ("Se sumo impusto IIBB de "+ iibb);
-            }
-            else
-            {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-            }
+            sdescuento = precio * 25/100;
+
         } 
      
-        if (opcion != "ArgentinaLuz" && opcion != "FelipeLamparas")
+        else
         {
-            suma= 35*cant;
-            descuento = suma * 0.20;
-            total= suma-descuento;
-            if(total >= 120)
-             {
-                iibb= total*0.10;
-                total= total+iibb;
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-                alert ("Se sumo impusto IIBB de "+ iibb);
-            }
-            else
-            {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-            }
+            descuento = precio * 20/100;
          }
      }
 /*compra 3 lamparas*/
-     if (cant == 3)
+     else if (cant == 3)
      {
         if(opcion=="ArgentinaLuz")
         {
-            suma= 35*cant;
-            descuento = suma * 0.15;
-            total= suma-descuento;
-                if(total >= 120)
-                {
-                    iibb= total*0.10;
-                    total= total+iibb;
-                    document.getElementById("precioDescuento").value = total.toFixed(2);
-                    alert ("Se sumo impusto IIBB de "+ iibb);
-                }
-                else
-                {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-                }
+           descuento = precio * 15/100;
         }
-        if (opcion == "FelipeLamparas")
+        else if (opcion == "FelipeLamparas")
         {
-            suma= 35*cant;
-            descuento = suma * 0.10;
-            total= suma-descuento;
-                if(total >= 120)
-                {
-                    iibb= total*0.10;
-                    total= total+iibb;
-                    document.getElementById("precioDescuento").value = total.toFixed(2);
-                    alert ("Se sumo impusto IIBB de "+ iibb);
-                }
-                else
-                {
-                    document.getElementById("precioDescuento").value = total.toFixed(2);
-                }
+            descuento = precio * 10/100;     
         }
         else
         {
-            suma= 35*cant;
-            descuento = suma * 0.05;
-            total= suma-descuento;
-            if(total >= 120)
-            {
-                iibb= total*0.10;
-                total= total+iibb;
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-                alert ("Se sumo impusto IIBB de "+ iibb);
-            }
-            else
-            {
-                document.getElementById("precioDescuento").value = total.toFixed(2);
-            }
+            descuento = precio * 50/100;
         }
      }
+     else if (cant <= 2)
+     {
+            descuento=0;
+     }
+
+     preciodes= precio - descuento;
+     total= preciodes * cant; 
+/* Impuesto IIBB sumado si el total es de 120 o superior*/
+     if(total >= 120)
+        {
+            iibb= total*0.10;
+            total= total+iibb;
+            flag=true;
+        }     
+     document.getElementById("precioDescuento").value = total.toFixed(2);
 }

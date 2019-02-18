@@ -8,10 +8,10 @@ var eleccionMaquina;
 
 function comenzar()
 {
-eleccionMaquina = parseInt(Math.round(Math.random()*2)+1);
-
+eleccionMaquina = Math.floor(Math.random()*3)+1;
+alert (eleccionMaquina);
 }//FIN DE LA FUNCIÓN
-
+/*
 function piedra()
 {
     if(eleccionMaquina == 1)
@@ -26,7 +26,7 @@ function piedra()
     {
         alert ("Has ganado");
     }
-}//FIN DE LA FUNCIÓN
+}//FIN DE LA FUNCIÓN 
 function papel()
 {
     if(eleccionMaquina == 2)
@@ -41,7 +41,7 @@ function papel()
     {
         alert ("Has perdido");
     }
-}//FIN DE LA FUNCIÓN
+}//FIN DE LA FUNCIÓN */
 function tijera()
 {
 	if(eleccionMaquina==3)
