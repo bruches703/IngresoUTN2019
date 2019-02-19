@@ -10,50 +10,62 @@ function comenzar()
 {
 eleccionMaquina = Math.floor(Math.random()*3)+1;
 alert (eleccionMaquina);
+switch (eleccionMaquina)
+{
+    case 1:
+        alert("La maquina dio Piedra");
+        break;
+    case 2:
+        alert("La maquina dio Papel");
+        break;
+    case 3:
+        alert("La maquina dio Tijera");
+        break
+}
 }//FIN DE LA FUNCIÓN
-/*
+
 function piedra()
 {
-    if(eleccionMaquina == 1)
+    switch(eleccionMaquina)
     {
-        alert ("Empate");
-    }
-	else if (eleccionMaquina==2)
-    {
-        alert ("Perdiste");
-    }
-    else
-    {
-        alert ("Has ganado");
+     case 1:
+        alert("Empate");
+        break
+     case 3:
+        alert("Has ganado");
+        break
+     case 2:
+        alert("Perdiste");
+        break;
     }
 }//FIN DE LA FUNCIÓN 
 function papel()
 {
-    if(eleccionMaquina == 2)
+    switch(eleccionMaquina)
     {
+     case 2:
         alert("Empate");
-    }
-    else if(eleccionMaquina==1)
-    {
+        break
+     case 1:
         alert("Has ganado");
+        break
+     default:
+        alert("Perdiste");
+        break;
     }
-    else
-    {
-        alert ("Has perdido");
-    }
-}//FIN DE LA FUNCIÓN */
+}//FIN DE LA FUNCIÓN 
 function tijera()
 {
-	if(eleccionMaquina==3)
+    switch(eleccionMaquina)
     {
+     case 3:
         alert("Empate");
-    }
-    else if (eleccionMaquina==1)
-    {
+        break
+     case 2:
         alert("Has ganado");
-    }
-    else
-    {
+        break
+     default:
         alert("Perdiste");
+        break;
     }
 }//FIN DE LA FUNCIÓN

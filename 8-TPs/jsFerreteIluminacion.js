@@ -14,12 +14,12 @@ function CalcularPrecio ()
 
      cant = parseInt(document.getElementById("Cantidad").value);
      opcion = document.getElementById("Marca").value;
-/*Compra mayor a 6 lamparas*/
+/*Compra mayor a 6 lamparas
      if (cant >= 6)
      {
         descuento = precio * 50/100;
      }
-/* compra 5 lamparas ArgentinaLuz*/
+/* compra 5 lamparas ArgentinaLuz
      else if(cant == 5)
      {
         if(opcion == "ArgentinaLuz")
@@ -32,7 +32,7 @@ function CalcularPrecio ()
             descuento = precio * 30/100;
         } 
      }
-/*compra 4 lamparas ArgentinaLuz o FelipeLamparas*/
+/*compra 4 lamparas ArgentinaLuz o FelipeLamparas
      else if (cant == 4)
      {
          if (opcion=="ArgentinaLuz" || opcion == "FelipeLamparas")
@@ -46,7 +46,7 @@ function CalcularPrecio ()
             descuento = precio * 20/100;
          }
      }
-/*compra 3 lamparas*/
+/*compra 3 lamparas
      else if (cant == 3)
      {
         if(opcion=="ArgentinaLuz")
@@ -59,7 +59,7 @@ function CalcularPrecio ()
         }
         else
         {
-            descuento = precio * 50/100;
+            descuento = precio * 5/100;
         }
      }
      else if (cant <= 2)
@@ -70,11 +70,68 @@ function CalcularPrecio ()
      preciodes= precio - descuento;
      total= preciodes * cant; 
 /* Impuesto IIBB sumado si el total es de 120 o superior*/
-     if(total >= 120)
+     /*if(total >= 120)
         {
             iibb= total*0.10;
             total= total+iibb;
             flag=true;
+            alert("impuesto de IIBB" +iibb);
         }     
      document.getElementById("precioDescuento").value = total.toFixed(2);
+    */
+        switch(cant)
+        {
+            case 6:
+                descuento = precio * 50/100;
+                break;
+            case 5:
+                descuento = precio * 40/100;
+                    if(opcion == "ArgentinaLuz")
+                        {
+                        descuento = precio * 40/100;
+                        }
+                    else 
+                        {    
+                        descuento = precio * 30/100;
+                        }
+                break;
+            case 4:
+                    if (opcion=="ArgentinaLuz" || opcion == "FelipeLamparas")
+                        {
+                        descuento = precio * 25/100;
+                        } 
+                    else
+                        {
+                        descuento = precio * 20/100;
+                        }
+                break;
+            case 3:
+                    if(opcion=="ArgentinaLuz")
+                        {
+                        descuento = precio * 15/100;
+                        }
+                    else if (opcion == "FelipeLamparas")
+                        {
+                        descuento = precio * 10/100;     
+                        }
+                    else
+                        {
+                        descuento = precio * 5/100;
+                        }
+                break;
+            default:
+                    descuento=0;
+                break;
+        }
+        preciodes= precio - descuento;
+        total= preciodes * cant; 
+     
+     if(total >= 120)
+        {
+            iibb= total*0.10;
+            total= total+iibb;
+            alert("impuesto de IIBB: $"+ iibb);
+        }     
+     document.getElementById("precioDescuento").value = total.toFixed(2);
+     
 }
