@@ -3,11 +3,11 @@ function Mostrar()
 
 	var contador=0;
 	var acumulador=0;
-	var i=1;
+	var i=0;
 
-	while (i<6)
+	while (i<5)
 	{
-	var numero = parseInt(prompt("Ingrese el numero "+ i));
+	var numero = parseInt(prompt("Ingrese numero "));
 	acumulador=acumulador+numero;
 	i=i+1;
 	}
